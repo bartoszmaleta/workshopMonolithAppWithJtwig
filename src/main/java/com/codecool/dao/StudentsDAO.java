@@ -18,18 +18,20 @@ public class StudentsDAO {
 
         try {
             Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("SELECT * FROM public.students;");
+            ResultSet rs = statement.executeQuery("SELECT * FROM \"People\";");
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
                 String surname = rs.getString("surname");
-                String email = rs.getString("email");
+//                String email = rs.getString("email");
+                int age = rs.getInt("age");
 
                 Student student = new Student();
                 student.setId(id)
                         .setName(name)
                         .setSurname(surname)
-                        .setEmail(email);
+//                        .setEmail(email);
+                        .setAge(age);
                 students.add(student);
             }
             rs.close();

@@ -5,7 +5,16 @@ public class Student {
     private String name;
     private String surname;
     private String email;
+    private int age;
 
+    public int getAge() {
+        return age;
+    }
+
+    public Student setAge(int age) {
+        this.age = age;
+        return this;
+    }
 
     public int getId() {
         return id;
@@ -42,4 +51,5 @@ public class Student {
         this.email = email;
         return this;
     }
+
 }
