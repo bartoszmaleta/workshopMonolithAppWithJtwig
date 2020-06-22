@@ -2,10 +2,7 @@ package com.codecool.dao;
 
 import com.codecool.model.Student;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,5 +41,21 @@ public class StudentsDAO {
         }
 
         throw new Exception("Data not found");
+    }
+
+    public void setStudent(Student student) throws ClassNotFoundException, SQLException {
+        Connector connector = new Connector();
+        Connection connection = connector.Connect();
+
+        String query = "INSERT INTO \"People\" (name, surname, age) VALUES (?, ?, ?)";
+        PreparedStatement ps = connection.prepareStatement(query);
+        ps.setString(1, student.getName());
+        ps.setString(2, student.getSurname());
+        ps.setInt(3, student.getAge());
+
+        ps.executeUpdate(query);
+
+
+
     }
 }
