@@ -12,6 +12,7 @@ public class App {
 
         server.createContext("/students", new StudentHandler());
         server.createContext("/mentors", new MentorHandler());
+        server.createContext("/template", new TemplateHandler());
         server.setExecutor(null);
         server.start();
 

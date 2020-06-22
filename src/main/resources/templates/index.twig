@@ -1,0 +1,6 @@
+<h1>LIST OF STUDENTS</h1>
+<ul>
+    {% for student in students %}
+        <li> {{ student.getName() }} {{ student.getSurname() }} {{ student.getEmail() }}</li>
+    {% endfor %}
+</ul>
