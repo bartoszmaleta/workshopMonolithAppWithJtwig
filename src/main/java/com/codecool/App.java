@@ -17,5 +17,9 @@ public class App {
         server.start();
 
         System.out.println("Server has started on port " + server.getAddress().getPort());
+
+
+//        http://localhost:8005/template
+
     }
 }
